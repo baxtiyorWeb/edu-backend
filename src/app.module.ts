@@ -10,15 +10,21 @@ import { UserModule } from './user/user.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }), // .env uchun
+    // TypeOrmModule.forRoot({
+    //   type: 'postgres',
+    //   host: process.env.DB_HOST || 'localhost',
+    //   port: parseInt(process.env.DB_PORT as string, 10) || 5432,
+    //   username: process.env.DB_USER || 'postgres',
+    //   password: process.env.DB_PASS || '0000',
+    //   database: process.env.DB_NAME || 'edu',
+    //   autoLoadEntities: true,
+    //   synchronize: true,
+    // }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST || 'localhost',
-      port: parseInt(process.env.DB_PORT as string, 10) || 5432,
-      username: process.env.DB_USER || 'postgres',
-      password: process.env.DB_PASS || '0000',
-      database: process.env.DB_NAME || 'edu',
+      url: process.env.DATABASE_URL, // Faqat bitta URLni foydalaning
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: true, // Ehtiyot bo'ling, ishlab chiqarishda o'zgartirishlar uchun
     }),
     AuthModule,
     UserModule,
