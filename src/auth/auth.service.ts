@@ -17,7 +17,7 @@ import {
   SetRoleDto,
   VerifyOtpDto,
 } from './dto/auth.dto';
-import { ROLE } from 'src/enum';
+import { ROLE } from '../../src/enum';
 
 // Map step numbers to human-readable names for better communication
 const stepNames: Record<number, string> = {

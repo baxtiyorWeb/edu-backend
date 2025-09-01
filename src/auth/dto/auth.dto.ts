@@ -1,7 +1,7 @@
 // dto/send-otp.dto.ts
 import { IsString, IsNotEmpty, IsEnum, IsOptional } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { ROLE } from 'src/enum';
+import { ROLE } from './../../../src/enum';
 
 export class SendOtpDto {
   @ApiProperty({ example: '+998910184880' })
