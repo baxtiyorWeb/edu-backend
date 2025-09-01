@@ -18,7 +18,7 @@ import { UserModule } from './user/user.module';
       password: process.env.DB_PASS || '0000',
       database: process.env.DB_NAME || 'edu',
       autoLoadEntities: true,
-      synchronize: true, // developmentda true, productionda false
+      synchronize: true,
     }),
     AuthModule,
     UserModule,
@@ -27,3 +27,4 @@ import { UserModule } from './user/user.module';
   providers: [AppService],
 })
 export class AppModule {}
+//
